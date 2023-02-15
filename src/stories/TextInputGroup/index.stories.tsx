@@ -28,3 +28,10 @@ export const TextGroupRight: Story = {
     rightElement: <p>Dollars</p>,
   },
 }
+
+export const TextGroupLeftAndRight: Story = {
+  args: {
+    leftElement: <p>Price</p>,
+    rightElement: <p>Dollars</p>,
+  },
+}
