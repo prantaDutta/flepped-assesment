@@ -22,23 +22,23 @@ export const TextInputGroup: React.FC<ITextInputProps> = ({
     <div className={`flex items-center justify-center`}>
       {/*Left Element*/}
       {leftElement && (
-        <div className={'rounded-l-lg bg-gray-200 p-2 font-semibold'}>
+        <div className={'rounded-l-md bg-gray-200 p-2 font-semibold'}>
           {leftElement}
         </div>
       )}
       {/*Input*/}
       <div className="">
         <input
-          className={`my-2 px-4 py-2 font-semibold text-white text-gray-600 focus:outline-none ${
-            leftElement ? '' : 'rounded-l-lg'
-          } ${rightElement ? '' : 'rounded-r-lg'}`}
+          className={`my-2 px-4 py-2 font-semibold text-gray-600 focus:outline-none focus:ring-1 focus:ring-primary-light ${
+            leftElement ? '' : 'rounded-l-md'
+          } ${rightElement ? '' : 'rounded-r-md'}`}
           placeholder={placeholder}
           {...props}
         />
       </div>
       {/*Right Element*/}
       {rightElement && (
-        <div className={'rounded- rounded-r-lg bg-gray-200 p-2 font-semibold'}>
+        <div className={'rounded- rounded-r-md bg-gray-200 p-2 font-semibold'}>
           {rightElement}
         </div>
       )}

@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { TextInputGroup } from '@/stories/TextInputGroup/index'
+import { within } from '@storybook/testing-library'
+import { expect } from '@storybook/jest'
 
 const meta: Meta<typeof TextInputGroup> = {
   title: 'Components/TextInputGroup',
   component: TextInputGroup,
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/7.0/react/writing-docs/docs-page
   tags: ['autodocs'],
   parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/7.0/react/configure/story-layout
     layout: 'fullscreen',
   },
 }
@@ -23,10 +23,28 @@ export const TextGroupLeft: Story = {
   },
 }
 
+// A simple test to check whether the props are rendering properly or not for left element
+TextGroupLeft.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement)
+
+  // checking if left element rendered or not
+  const leftElement = canvas.getByText('Price')
+  await expect(leftElement).toBeTruthy()
+}
+
 export const TextGroupRight: Story = {
   args: {
     rightElement: <p>Dollars</p>,
   },
+}
+
+// A simple test to check whether the props are rendering properly or not for right element
+TextGroupRight.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement)
+
+  // checking if left element rendered or not
+  const rightElement = canvas.getByText('Dollars')
+  await expect(rightElement).toBeTruthy()
 }
 
 export const TextGroupLeftAndRight: Story = {
