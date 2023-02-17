@@ -1,4 +1,5 @@
 import React, { ButtonHTMLAttributes, useMemo } from 'react'
+import { COLOR_VARIANTS } from '../constants/colors'
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -50,8 +51,15 @@ export const Button: React.FC<IButtonProps> = ({
     <button
       aria-label="Button"
       {...props}
+      // if primary is true, then button will be primary, if
+      // secondary is true, then button will have secondary color
+      // otherwise it will just have the default color
       className={`${sizeClassNames} ${
-        primary ? 'bg-primary text-white' : 'bg-gray-200 text-black'
+        primary
+          ? COLOR_VARIANTS['primary']
+          : secondary
+          ? COLOR_VARIANTS['secondary']
+          : COLOR_VARIANTS['default']
       } ${
         uppercase ? 'uppercase' : 'capitalize'
       } mx-2 my-1 rounded-lg font-semibold`}

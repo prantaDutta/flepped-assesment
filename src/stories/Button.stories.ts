@@ -1,6 +1,6 @@
+import { Button } from '@/components/Button'
 import { expect } from '@storybook/jest'
 import { Meta, StoryObj } from '@storybook/react'
-import { Button } from '@/components/Button'
 import { within } from '@storybook/testing-library'
 
 const meta: Meta<typeof Button> = {
@@ -32,4 +32,11 @@ Primary.play = async ({ canvasElement }) => {
   const button = canvas.getByLabelText('Button')
 
   expect(button).toBeTruthy()
+}
+
+export const Secondary: Story = {
+  args: {
+    secondary: true,
+    title: 'Button',
+  },
 }
