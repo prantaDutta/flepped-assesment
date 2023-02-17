@@ -1,7 +1,7 @@
-import { Meta, StoryObj } from '@storybook/react'
-import { TextInputGroup } from '@/stories/TextInputGroup/index'
-import { within } from '@storybook/testing-library'
+import { TextInputGroup } from '@/components/TextInputGroup'
 import { expect } from '@storybook/jest'
+import { Meta, StoryObj } from '@storybook/react'
+import { within } from '@storybook/testing-library'
 
 const meta: Meta<typeof TextInputGroup> = {
   title: 'Components/TextInputGroup',

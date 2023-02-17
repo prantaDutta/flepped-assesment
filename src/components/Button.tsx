@@ -27,7 +27,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: () => void
 }
 
-const Button: React.FC<IButtonProps> = ({
+export const Button: React.FC<IButtonProps> = ({
   title = 'Button',
   primary,
   secondary,
@@ -60,5 +60,3 @@ const Button: React.FC<IButtonProps> = ({
     </button>
   )
 }
-
-export default Button

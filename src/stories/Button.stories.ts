@@ -1,6 +1,6 @@
 import { expect } from '@storybook/jest'
 import { Meta, StoryObj } from '@storybook/react'
-import Button from '@/stories/Button'
+import { Button } from '@/components/Button'
 import { within } from '@storybook/testing-library'
 
 const meta: Meta<typeof Button> = {
